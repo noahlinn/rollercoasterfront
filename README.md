@@ -32,14 +32,16 @@ information, but will not show any save options
 ## Routes
 | http verb  | route | notes | 
 | ------------- | ------------- | --- | 
-| POST | /user/create | creates a new user |
+|GET    | /                              | just says 'ok' |
+| POST | /user/ | creates a new user |
 | POST | /user/login | allows a user to login |
 | GET | /user/verify | verifies user |
-|GET    | /                              | just says 'ok' |
+|POST    | /rollercoasters                              | adds roller coaster to database |
+|PUT    | /rollercoasters                              | edit roller coaster in database |
 |POST    | /rollercoasters/search                        |displays all roller coasters on search
-|POST    | /rollercoasters/ridden                        |User saves roller coaster they've ridden
-|POST    | /rollercoasters/want_to_ride                        |User saves roller coaster they want to ride
-|DELETE    | /rollercoasters/ridden/:id                        |Removes coaster from your ridden list incase you're a fucking liar
+|POST    | /rollercoasters/ridden/:id                        |User saves roller coaster they've ridden
+|POST    | /rollercoasters/want_to_ride/:id                        |User saves roller coaster they want to ride
+|DELETE    | /rollercoasters/ridden/:id                        |Removes coaster from your ridden list incase you're a liar
 |DELETE    | /rollercoasters/want_to_ride /:id                        |Removes coaster from your want to ride list 
 
 ## ERB
