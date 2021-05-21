@@ -42,5 +42,21 @@ information, but will not show any save options
 |DELETE    | /rollercoasters/ridden/:id                        |Removes coaster from your ridden list incase you're a fucking liar
 |DELETE    | /rollercoasters/want_to_ride /:id                        |Removes coaster from your want to ride list 
 
-## Wireframe
-![frames](./erb.png)
+## ERB
+![erb](./erb.png)
+
+## Wireframes
+![home](./frames/home.png)
+![login](./frames/Login.png)
+![signup](./frames/Signup.png)
+![news](./frames/news.png)
+![profile](./frames/profile.png)
+![search](./frames/searchdatabase.png)
+![results](./frames/searchresults.png)
+![coastprofile](./frames/onecoast.png)
+![usersearch](./frames/usersearch.png)
+![userresults](./frames/userresults.png)
+
+
+
+
