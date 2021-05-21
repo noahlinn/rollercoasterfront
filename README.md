@@ -36,7 +36,8 @@ information, but will not show any save options
 | POST | /user/create | creates a new user |
 | POST | /user/login | allows a user to login |
 | GET | /user/verify | verifies user |
-|Post    | /rollercoasters                              | adds roller coaster to database |
+|POST    | /rollercoasters                              | adds roller coaster to database |
+|PUT    | /rollercoasters                              | edit roller coaster in database |
 |POST    | /rollercoasters/search                        |displays all roller coasters on search
 |POST    | /rollercoasters/ridden                        |User saves roller coaster they've ridden
 |POST    | /rollercoasters/want_to_ride                        |User saves roller coaster they want to ride
