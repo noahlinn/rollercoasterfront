@@ -32,10 +32,11 @@ information, but will not show any save options
 ## Routes
 | http verb  | route | notes | 
 | ------------- | ------------- | --- | 
+|GET    | /                              | just says 'ok' |
 | POST | /user/create | creates a new user |
 | POST | /user/login | allows a user to login |
 | GET | /user/verify | verifies user |
-|GET    | /                              | just says 'ok' |
+|Post    | /rollercoasters                              | adds roller coaster to database |
 |POST    | /rollercoasters/search                        |displays all roller coasters on search
 |POST    | /rollercoasters/ridden                        |User saves roller coaster they've ridden
 |POST    | /rollercoasters/want_to_ride                        |User saves roller coaster they want to ride
