@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# The Roller Coaster Informer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Roller Coasters Database and Coaster Count Tracker
 
-## Available Scripts
+## Overview/MVP
+The Roller Coaster Informer (TRCI) is a web app that allows you to look up roller coaster information and save roller coasters to your profile as either coasters you've riden or want
+to ride. I will most likely be creating my own api of roller coasters and their statistics. 
 
-In the project directory, you can run:
+## Stretch
+-Use an external news api to search news related to roller coasters and display that on a news page
+-Allow users to search for roller coasters based on multiple different querys i.e. location, manufacturer, type, etc... 
+-Embed a POV video of each coaster on their respective info page
+-Add a social media aspect to it 
 
-### `yarn start`
+## User Stories
+-On original load you will presented with a home page
+-There is a nav bar with home, login, and signup options
+-If logged in the home page will display your name otherwise it will have a general welcome message
+-If the user is not logged in they will be able to search for roller coasters and see their 
+information, but will not show any save options
+-Once logged in, the nav bar will show a profile tab and an upload coaster page
+-On each roller coaster page there will be an option to save the coaster to your ridden list or want to ride list
+-On the profile page, it will show some user info and also their ridden list and their want to ride list
+-If you click on a ride on the profile it will link you to that rides details 
+-If the ride is already on one of the lists instead of a add to list button there will be a remove from list button
+-On the upload page you will be able to add a coaster to the api 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Routes
+| http verb  | route | notes | 
+| ------------- | ------------- | --- | 
+| POST | /user/create | creates a new user |
+| POST | /user/login | allows a user to login |
+| GET | /user/verify | verifies user |
+|GET    | /                              | just says 'ok' |
+|POST    | /rollercoasters/search                        |displays all roller coasters on search
+|POST    | /rollercoasters/ridden                        |User saves roller coaster they've ridden
+|POST    | /rollercoasters/want_to_ride                        |User saves roller coaster they want to ride
+|DELETE    | /rollercoasters/ridden/:id                        |Removes coaster from your ridden list incase you're a fucking liar
+|DELETE    | /rollercoasters/want_to_ride /:id                        |Removes coaster from your want to ride list 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Wireframe
+![frames](Screen Shot 2021-05-21 at 12.35.13 AM.png)
