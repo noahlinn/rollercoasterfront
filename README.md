@@ -39,7 +39,7 @@ information, but will not show any save options
 |POST    | /rollercoasters/search                        |displays all roller coasters on search
 |POST    | /rollercoasters/ridden                        |User saves roller coaster they've ridden
 |POST    | /rollercoasters/want_to_ride                        |User saves roller coaster they want to ride
-|DELETE    | /rollercoasters/ridden/:id                        |Removes coaster from your ridden list incase you're a fucking liar
+|DELETE    | /rollercoasters/ridden/:id                        |Removes coaster from your ridden list incase you're a liar
 |DELETE    | /rollercoasters/want_to_ride /:id                        |Removes coaster from your want to ride list 
 
 ## ERB
