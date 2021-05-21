@@ -2,6 +2,9 @@
 
 ## Roller Coasters Database and Coaster Count Tracker
 
+## Tech Stack
+React/Flask/Postgres
+
 ## Overview/MVP
 The Roller Coaster Informer (TRCI) is a web app that allows you to look up roller coaster information and save roller coasters to your profile as either coasters you've riden or want
 to ride. I will most likely be creating my own api of roller coasters and their statistics. 
@@ -11,6 +14,7 @@ to ride. I will most likely be creating my own api of roller coasters and their 
 -Allow users to search for roller coasters based on multiple different querys i.e. location, manufacturer, type, etc... 
 -Embed a POV video of each coaster on their respective info page
 -Add a social media aspect to it 
+-Use a css library 
 
 ## User Stories
 -On original load you will presented with a home page
