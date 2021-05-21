@@ -39,4 +39,4 @@ information, but will not show any save options
 |DELETE    | /rollercoasters/want_to_ride /:id                        |Removes coaster from your want to ride list 
 
 ## Wireframe
-![frames](Screen Shot 2021-05-21 at 12.35.13 AM.png)
+![frames](/Users/noahlinn/Documents/myGa/projects/rcfront/Screen Shot 2021-05-21 at 12.35.13 AM.png)
