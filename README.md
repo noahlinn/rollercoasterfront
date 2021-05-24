@@ -45,7 +45,7 @@ information, but will not show any save options
 |DELETE    | /rollercoasters/want_to_ride /:id                        |Removes coaster from your want to ride list 
 
 ## ERB
-![erb](./erb.png)
+![erb](./rcerb.png)
 
 ## Wireframes
 ![home](./frames/home.png)

@@ -4,17 +4,18 @@ import axios from 'axios'
 const Login = (props) => {
     const [input, setInput] = useState({})
     const [error, setError] = useState('')
+
     const handleSubmit = (e) => {
         e.preventDefault()
         setError('')
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/login`, input).then(
-            (res) => {
-                props.setUser(res.data.user)
-                localStorage.setItem('userId', res.data.user_id)
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/login`, input)
+            .then((response) => {
+                props.setUser(response.data.user)
+                localStorage.setItem('userId', response.data.user_id)
             })
             .catch((err) => {
-                // setError(err.res.data.message)
-                console.log(err)
+                // console.log(err.data.message)
+                // // setError(err.response.data.message)
             })
     }
     return (

@@ -6,6 +6,8 @@ import './App.css';
 
 import Nav from './components/Nav'
 import Login from './pages/Login'
+import SignUpPage from './pages/Signup'
+
 function App() {
   const [user, setUser] = useState({})
   const fetchUser = () => {
@@ -24,13 +26,21 @@ function App() {
 
   return (
     <div className="App">
-      <Nav user={user} setUser={setUser}/>
+      <Nav user={user} setUser={setUser} />
 
       <Route path="/login" render={(routeInfo) => {
         if (user.id) {
           return <Redirect to="/dashboard" />
         } else {
           return <Login setUser={setUser} />
+        }
+      }} />
+
+      <Route path="/signup" render={(routeInfo) => {
+        if (user.id) {
+          return <Redirect to="/dashboard" />
+        } else {
+          return <SignUpPage setUser={setUser} />
         }
       }} />
     </div>
