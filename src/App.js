@@ -7,7 +7,8 @@ import './App.css';
 import Nav from './components/Nav'
 import Login from './pages/Login'
 import SignUpPage from './pages/Signup'
-
+import SearchCoaster from './pages/SearchCoaster'
+import OneCoaster from './pages/OneCoaster'
 function App() {
   const [user, setUser] = useState({})
   const fetchUser = () => {
@@ -27,6 +28,9 @@ function App() {
   return (
     <div className="App">
       <Nav user={user} setUser={setUser} />
+
+      <Route path = '/searchrollercoasters' render = {() => <SearchCoaster/>}/>
+      <Route path = '/rollercoasters/:id' render = {() => <OneCoaster/>}/>
 
       <Route path="/login" render={(routeInfo) => {
         if (user.id) {

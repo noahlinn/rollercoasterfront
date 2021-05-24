@@ -5,7 +5,7 @@ const Nav = (props) => {
     return(
         <nav>
              <Link to='/'><p>Home</p></Link>
-             <Link to='/search'><p>Search</p></Link>
+             <Link to='/searchrollercoasters'><p>Search</p></Link>
              <Link to='/news'><p>News</p></Link>
             {props.user.id ?
                 <>
