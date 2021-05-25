@@ -6,17 +6,16 @@ import axios from 'axios'
 const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
-    const backEnd = process.env.REACT_APP_BACKEND
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState({})
 
     const fetchUser = () => {
         const userId = localStorage.getItem('userId')
         if (userId) {
-            axios.get(`${backEnd}/users/verify`, {
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/verify`, {
                 headers: {
                     Authorization: userId
                 }
-            }).then((response) => setUser(response.data.user))
+            }).then((response) => {setUser(response.data.user)})
         }
     }
     const state = {

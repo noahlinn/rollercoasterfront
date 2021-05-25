@@ -1,8 +1,11 @@
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import CoasterButtons from '../components/CoasterButtons'
+import { UserContext } from '../context/usercontext'
 import axios from 'axios'
 const OneCoaster = () => {
+    const { userState } = useContext(UserContext)
+    const [user, setUser] = userState
     const params = useParams()
     const [coaster, setCoaster] = useState(null)
 
@@ -47,7 +50,7 @@ const OneCoaster = () => {
                             </div>
                         </div>
                     </div>
-                    <CoasterButtons/>
+                    <CoasterButtons user={user} coaster={coaster}/>
                 </>}
             </div>
         </>

@@ -1,13 +1,18 @@
 import { Link } from 'react-router-dom'
-import { useContext, useState } from 'react'
+import { useContext, useStatem, useEffect } from 'react'
 import { UserContext } from '../context/usercontext'
+
 const Nav = (props) => {
+    const { userState } = useContext(UserContext)
+    const [user, setUser] = userState
+    console.log(user)
+    
     return(
         <nav>
              <Link to='/'><p>Home</p></Link>
              <Link to='/searchrollercoasters'><p>Search</p></Link>
              <Link to='/news'><p>News</p></Link>
-            {props.user.id ?
+            {user.id ?
                 <>
                 
                 
@@ -15,7 +20,7 @@ const Nav = (props) => {
                 
                 <Link to='/profile'><p>Profile</p></Link>
                 
-                <span onClick={() => { localStorage.removeItem('userId'); props.setUser({}) }}>
+                <span onClick={() => { localStorage.removeItem('userId'); setUser({}) }}>
                     <Link to='/'><p>Log Out</p></Link>
                 </span></>
                 : <>

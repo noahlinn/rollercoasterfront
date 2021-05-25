@@ -12,9 +12,8 @@ const SignUpPage = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setError('')
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/users`, {
-            input
-        })
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/users`, input
+        )
             .then((response) => {
                 props.setUser(response.data.user)
                 localStorage.setItem('userId', response.data.user_id)
