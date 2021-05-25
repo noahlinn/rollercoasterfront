@@ -15,10 +15,10 @@ const Nav = (props) => {
             {user.id ?
                 <>
                 
-                
+                <Link to='/searchusers'><p>Search Users</p></Link>
                 <Link to='/upload'><p>Upload</p></Link>
                 
-                <Link to='/profile'><p>Profile</p></Link>
+                <Link to={`/profile/${user.id}`}><p>Profile</p></Link>
                 
                 <span onClick={() => { localStorage.removeItem('userId'); setUser({}) }}>
                     <Link to='/'><p>Log Out</p></Link>

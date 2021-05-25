@@ -12,8 +12,8 @@ import SearchCoaster from './pages/SearchCoaster'
 import OneCoaster from './pages/OneCoaster'
 import CreateCoaster from './pages/CreateCoaster'
 import EditCoaster from './pages/EditCoaster'
+import Profile from './pages/Profile';
 function App() {
-  // const [user, setUser] = useState({})
   const { userState, fetchUser } = useContext(UserContext)
   const [user, setUser] = userState
   useEffect(fetchUser, [])
@@ -33,18 +33,27 @@ function App() {
 
   return (
     <div className="App">
-      <Nav/>
+      <Nav />
 
-      <Route path = '/searchrollercoasters' render = {() => <SearchCoaster/>}/>
-      <Route exact path = '/rollercoasters/:id' render = {() => <OneCoaster/>}/>
-      <Route exact path = '/rollercoasters/:id/edit' render = {() => <EditCoaster/>}/>
+      <Route path='/searchrollercoasters' render={() => <SearchCoaster />} />
+      <Route exact path='/rollercoasters/:id' render={() => <OneCoaster />} />
+      <Route exact path='/rollercoasters/:id/edit' render={() => <EditCoaster />} />
+      {/* <Route exact path='/profile/:id' render={() => <Profile />} /> */}
       {/* <Route path = '/upload' render = {() => <CreateCoaster/>}/> */}
 
       <Route path="/upload" render={(routeInfo) => {
         if (user.id) {
-          return <CreateCoaster user = {user}/>
+          return <CreateCoaster user={user} />
         } else {
-          return <Redirect to="/searchrollercoasters"/>
+          return <Redirect to="/searchrollercoasters" />
+        }
+      }} />
+
+      <Route path="/profile/:id" render={(routeInfo) => {
+        if (user.id) {
+          return <Profile user={user}/>
+        } else {
+          return <Redirect to="/searchrollercoasters" />
         }
       }} />
 
