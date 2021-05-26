@@ -9,7 +9,7 @@ const News = () => {
             .then((res) => setNews(res.data.data))
             .catch((err) => console.log(err))
     }
-    // useEffect(getNews, [])
+    useEffect(getNews, [])
     return (
         <div>
             <h1>Amusement Park News</h1>

@@ -72,11 +72,12 @@ iframe {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.603);
   height: 110px;
-  width: 300px;
+  width: 298px;
   margin-top: 95px;
   visibility: visible;
   padding-left: 1px;
   padding-right: 1px;
+  flex-direction: column;
 }
 
 
