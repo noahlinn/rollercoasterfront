@@ -10,6 +10,7 @@ const EditCoaster = () => {
     const [updatedCoaster, setUpdatedCoaster] = useState(null)
     const [redirect, setRedirect] = useState(false)
     
+    
     const getOneCoaster = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/coasters/${params.id}`).then(
             res => setInput(res.data.roller_coaster)
@@ -33,7 +34,7 @@ const EditCoaster = () => {
         { redirect && <Redirect to={`/rollercoasters/${input.id}`} exact />}
         {input && 
             <CreateForm onSubmit = {onSubmit} input = {input} 
-            setInput = {setInput} submit = {"Update!"} header = {"Update Coaster"}/>} 
+            setInput = {setInput} submit = {"Update!"} header = {"Update Coaster"} photo={false}/>} 
         
        </>
 

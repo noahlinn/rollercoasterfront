@@ -15,9 +15,9 @@ const SearchUsers = () => {
         if (name) {
             searchByName()
         }
-        else if (location)
-            // searchByPark()
-            console.log('nope')
+        else if (location) {
+            searchByLocation()
+        }
         else {
             setError("Please Choose Search Method")
         }
@@ -40,6 +40,15 @@ const SearchUsers = () => {
                 setError(err.response.data.message)
             })
     }
+    const searchByLocation = () => {
+        setError(null)
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/search/location`, {
+            "query": query.query
+        }).then((res) => setResults(res.data.results))
+            .catch((err) => {
+                setError(err.response.data.message)
+            })
+    }
 
     return (
         <>
@@ -51,7 +60,7 @@ const SearchUsers = () => {
                 <>
                     { results &&
                         <div className="news-container">
-                            <SearchResults results={results} location={"profile"}/>
+                            <SearchResults results={results} location={"profile"} />
                         </div>}
                 </>
             }

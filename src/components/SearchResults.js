@@ -12,7 +12,7 @@ const SearchResults = (props) => {
                             <div className="news-title">
                             <h3 >{res.name}</h3>
                             {res.park_located_at}
-                            {res.location}
+                            {res.city}
                             </div>
                         </div>
                     </div>

@@ -39,10 +39,12 @@ const CreateForm = (props) => {
                 <label htmlFor="manufacturer">Manufacturer</label>
                 <input className="login-form-input" value={props.input.manufacturer} onChange={(e) => props.setInput({ ...props.input, manufacturer: e.target.value })} />
             </div>
+            {props.photo ? 
             <div>
                 <label htmlFor="image">Image</label>
-                <input className="login-form-input" value={props.input.image} onChange={(e) => props.setInput({ ...props.input, image: e.target.value })} />
+                <input className="login-form-input" type="file"  onChange={(e) => props.setInput({ ...props.input, image: e.target.files[0] })} />
             </div>
+            :null}
             <div>
                 <label htmlFor="video">Youtube Link</label>
                 <input className="login-form-input" value={props.input.video} onChange={(e) => props.setInput({ ...props.input, video: e.target.value })} />

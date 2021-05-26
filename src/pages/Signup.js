@@ -1,18 +1,33 @@
 import axios from 'axios'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 
 import { Redirect } from 'react-router-dom'
 
 const SignUpPage = (props) => {
-    const backEnd = process.env.REACT_APP_BACKEND
+
     const [input, setInput] = useState({})
-    const [redirect, setRedirect] = useState(false)
+
     const [error, setError] = useState('')
 
+    
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        const data = new FormData()
+        data.append('file', input.prof_pic)
+        data.append('name', input.name)
+        data.append('email', input.email)
+        data.append('location', input.location)
+        data.append('about_me', input.about_me)
+        data.append('password', input.password)
+
+
         setError('')
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/users`, input
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/users`, data, {
+            headers: {
+                'content-type': 'multipart/form-data'
+              }
+        }
         )
             .then((response) => {
                 props.setUser(response.data.user)
@@ -42,6 +57,10 @@ const SignUpPage = (props) => {
                 </div>
                 <label htmlFor="about_me">About You</label>
                 <textarea className="login-form-input" value={input.about_me} onChange={(e) => setInput({ ...input, about_me: e.target.value })} required/>
+                <div>
+                    <label htmlFor="profile_picture">Profile Picture</label>
+                    <input className="login-form-input" type="file" onChange={(e) => setInput({ ...input, prof_pic: e.target.files[0] })} required/>
+                </div>
                 <div>
                     <label htmlFor="password">Password</label>
                     <input className="login-form-input" type="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} required/>
