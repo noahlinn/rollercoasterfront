@@ -20,7 +20,7 @@ const SignUpPage = (props) => {
             })
             .catch((err) => {
                 setError(err.response.data.message)
-                // console.log(err);
+                
             })
     }
 
@@ -32,19 +32,19 @@ const SignUpPage = (props) => {
             <form className="login-form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name</label>
-                    <input className="login-form-input" value={input.name} onChange={(e) => setInput({ ...input, name: e.target.value })} />
+                    <input className="login-form-input" value={input.name} onChange={(e) => setInput({ ...input, name: e.target.value })} required/>
                 </div>
                 <label htmlFor="email">Email</label>
-                <input className="login-form-input" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} />
+                <input className="login-form-input" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} required/>
                 <div>
                     <label htmlFor="location">Location</label>
-                    <input className="login-form-input" value={input.location} onChange={(e) => setInput({ ...input, location: e.target.value })} />
+                    <input className="login-form-input" value={input.location} onChange={(e) => setInput({ ...input, location: e.target.value })} required/>
                 </div>
                 <label htmlFor="about_me">About You</label>
-                <textarea className="login-form-input" value={input.about_me} onChange={(e) => setInput({ ...input, about_me: e.target.value })} />
+                <textarea className="login-form-input" value={input.about_me} onChange={(e) => setInput({ ...input, about_me: e.target.value })} required/>
                 <div>
                     <label htmlFor="password">Password</label>
-                    <input className="login-form-input" type="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} />
+                    <input className="login-form-input" type="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} required/>
                 </div>
                 <input className="submit-login" type="submit" value="Sign Up" />
 

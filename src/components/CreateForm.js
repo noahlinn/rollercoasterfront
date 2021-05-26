@@ -44,7 +44,7 @@ const CreateForm = (props) => {
                 <input className="login-form-input" value={props.input.image} onChange={(e) => props.setInput({ ...props.input, image: e.target.value })} />
             </div>
             <div>
-                <label htmlFor="video">Image</label>
+                <label htmlFor="video">Youtube Link</label>
                 <input className="login-form-input" value={props.input.video} onChange={(e) => props.setInput({ ...props.input, video: e.target.value })} />
             </div>
             <input className="submit-login" type="submit" value={props.submit} />

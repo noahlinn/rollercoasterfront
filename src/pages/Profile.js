@@ -11,38 +11,48 @@ const Profile = (props) => {
 
     const getUser = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/${params.id}`).then(
-            res => { setProfileUser(res.data.user) }
+            (res) => { setProfileUser(res.data.user) }
         )
+            .catch((err) => {
+                console.log(err)
+            })
     }
     useEffect(getUser, [])
 
     const getCredits = () => {
-        axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/credits/${params.id}`).then(
-            res => setCredits(res.data.credits)
-        )
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/credits/${params.id}`)
+            .then(
+                (res) => setCredits(res.data.credits)
+            )
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
     useEffect(getCredits, [])
 
     const getBucketList = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/bucketlist/${params.id}`).then(
-            res => setBucketList(res.data.bucket_list)
+            (res) => setBucketList(res.data.bucket_list)
         )
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
     useEffect(getBucketList, [])
     return (
         <div>
-            {profileUser ? 
-            <>
-            <h1>{profileUser.name}</h1> 
-            <p>{profileUser.location}</p>
-            <p>{profileUser.about_me}</p>
-            {props.user.id === profileUser.id && <button>Edit</button>}
-            </>
-            : null}
-            <UserCredits header={"Credits"} coaster={credits}/>
-            <UserCredits header={"Bucket List"} coaster={bucketList}/>
+            {profileUser ?
+                <>
+                    <h1>{profileUser.name}</h1>
+                    <p>{profileUser.location}</p>
+                    <p>{profileUser.about_me}</p>
+                    {props.user.id === profileUser.id && <button>Edit</button>}
+                </>
+                : null}
+            <UserCredits header={"Credits"} coaster={credits} />
+            <UserCredits header={"Bucket List"} coaster={bucketList} />
         </div>
     )
 

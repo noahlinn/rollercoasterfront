@@ -14,8 +14,7 @@ const Login = (props) => {
                 localStorage.setItem('userId', response.data.user_id)
             })
             .catch((err) => {
-                // console.log(err.data.message)
-                // // setError(err.response.data.message)
+                setError(err.response.data.message)
             })
     }
     return (

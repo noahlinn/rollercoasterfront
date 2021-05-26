@@ -2,81 +2,96 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 nav {
   display: flex;
   justify-content: space-between;
 }
 
-.login-div {
+/* .login-div {
   display: flex;
   flex-direction: column;
 }
 
-.coaster-image{
+.coaster-image {
   max-width: 30%
 }
-.coaster-image img{
+
+.coaster-image img {
   width: 100%;
 }
 
-.coaster_info{
+.coaster_info {
   width: 30%;
 }
 
-.container-container{
+.container-container {
   width: 30%;
   position: relative;
-}
+} */
+
 .video_container {
+
   position: absolute;
-  max-width:600px;
-  max-height:338px;
-  width:90vw;
-  height:50.85vw;
-  margin:0 auto;
+  max-width: 900px;
+  max-height: 507px;
+  width: 90vw;
+  height: 50.85vw;
+  margin: 0 auto;
 }
 
 iframe {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 
-.one-wrap{
+/* .one-wrap {
   display: flex;
   flex-direction: row;
+} */
+
+.news-container{
+  margin:auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.each-news {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin:20px
+}
+
+.news-title-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.603);
+  height: 110px;
+  width: 300px;
+  margin-top: 95px;
+  visibility: visible;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+
+
+.news-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: white;
+  
+}
+
+.news-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
 }

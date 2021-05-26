@@ -27,7 +27,7 @@ const CreateCoaster = (props) => {
     return (
         <>
             { redirect && <Redirect to={`/rollercoasters/${newCoaster.id}`} exact />}
-            <CreateForm onSubmit={onSubmit} input={input} setInput={setInput} />
+            <CreateForm header={"Add Roller Coaster"} onSubmit={onSubmit} input={input} setInput={setInput} submit={"Add Coaster!"}/>
         </>
     )
 }

@@ -12,7 +12,8 @@ import SearchCoaster from './pages/SearchCoaster'
 import OneCoaster from './pages/OneCoaster'
 import CreateCoaster from './pages/CreateCoaster'
 import EditCoaster from './pages/EditCoaster'
-import Profile from './pages/Profile';
+import Profile from './pages/Profile'
+import News from './pages/News'
 function App() {
   const { userState, fetchUser } = useContext(UserContext)
   const [user, setUser] = userState
@@ -38,6 +39,7 @@ function App() {
       <Route path='/searchrollercoasters' render={() => <SearchCoaster />} />
       <Route exact path='/rollercoasters/:id' render={() => <OneCoaster />} />
       <Route exact path='/rollercoasters/:id/edit' render={() => <EditCoaster />} />
+      <Route exact path='/news' render={() => <News />} />
       {/* <Route exact path='/profile/:id' render={() => <Profile />} /> */}
       {/* <Route path = '/upload' render = {() => <CreateCoaster/>}/> */}
 

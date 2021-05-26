@@ -3,11 +3,15 @@ import { useState, useEffect, useContext } from 'react'
 import CoasterButtons from '../components/CoasterButtons'
 import { UserContext } from '../context/usercontext'
 import axios from 'axios'
+
 const OneCoaster = () => {
     const { userState } = useContext(UserContext)
     const [user, setUser] = userState
     const params = useParams()
     const [coaster, setCoaster] = useState(null)
+    const [creditsId, setCreditsId] = useState([null])
+    const [bucketListId, setBucketListId] = useState([null])
+
 
     const getOneCoaster = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/coasters/${params.id}`).then(
@@ -15,11 +19,45 @@ const OneCoaster = () => {
         )
     }
 
+    const getCredits = () => {
+
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/credits/${user.id}`)
+            .then(
+                (res) => {
+                    let creditIdArr = []
+                    for (let cred of res.data.credits) {
+                        creditIdArr.push(cred.id)
+                    }
+                    setCreditsId(creditIdArr)
+                }
+            )
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    useEffect(getCredits, [user])
+
+    const getBucketList = () => {
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/bucketlist/${user.id}`).then(
+            (res) => {
+                let bucketIdArr = []
+                for(let buck of res.data.bucket_list){
+                    bucketIdArr.push(buck.id)
+                }
+                setBucketListId(bucketIdArr)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    useEffect(getBucketList, [user])
+
 
     useEffect(getOneCoaster, [])
     return (
         <>
-
             <div className="coaster-page">
                 {coaster && <>
                     <h1>{coaster.name}</h1>
@@ -39,7 +77,7 @@ const OneCoaster = () => {
                             <p>Type: {coaster.type_of}</p>
 
                         </div>
-                        <div className="container-container">
+                        {/* <div className="container-container">
                             <div className="video_container">
                                 <iframe src={`https://www.youtube.com/embed/${coaster.video}`}
                                     frameborder='0'
@@ -48,9 +86,9 @@ const OneCoaster = () => {
                                     title='video'
                                 />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
-                    <CoasterButtons user={user} coaster={coaster}/>
+                    <CoasterButtons getCredits={getCredits} creditsId={creditsId} bucketListId={bucketListId} user={user} coaster={coaster} />
                 </>}
             </div>
         </>
