@@ -50,7 +50,15 @@ const CoasterButtons = (props) => {
     }
 
     const removeFromBucketList = () => {
-        console.log("remove")
+        axios.delete(`${process.env.REACT_APP_BACKEND_URL}/users/bucketlist/${params.id}`, {
+            headers: {
+                Authorization: userId
+            }
+        }).then((res) => {
+            props.getBucketList()
+        }).catch((err) => {
+            console.log(err)
+        })
     }
 
 

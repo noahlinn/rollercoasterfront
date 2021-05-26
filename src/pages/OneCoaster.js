@@ -88,7 +88,7 @@ const OneCoaster = () => {
                             </div>
                         </div> */}
                     </div>
-                    <CoasterButtons getCredits={getCredits} creditsId={creditsId} bucketListId={bucketListId} user={user} coaster={coaster} />
+                    <CoasterButtons getBucketList={getBucketList} getCredits={getCredits} creditsId={creditsId} bucketListId={bucketListId} user={user} coaster={coaster} />
                 </>}
             </div>
         </>
