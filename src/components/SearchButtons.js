@@ -1,7 +1,7 @@
 const SearchButtons = (props) => (
-    <span className="buttons">
-        <button onClick={props.nameOnClick}>Search By Name</button>
-        <button onClick={props.parkOnClick}>{props.location}</button>
+    <span className="search-buttons">
+        <button className = {props.name && "name-button"} onClick={props.nameOnClick}>Search By Name</button>
+        <button className = {props.park && "park-button"} onClick={props.parkOnClick}>{props.location}</button>
     </span>
     
 )

@@ -3,6 +3,7 @@ import axios from 'axios'
 import SearchBar from '../components/SearchBar'
 import SearchResults from '../components/SearchResults'
 import SearchButtons from '../components/SearchButtons'
+import '../css/search.css'
 const SearchCoaster = () => {
     const [query, setQuery] = useState("")
     const [name, setName] = useState(false)
@@ -56,9 +57,9 @@ const SearchCoaster = () => {
     return (
         <>
             <div>
-                <h1>SEARCH</h1>
-                <SearchButtons parkOnClick = {parkOnClick} nameOnClick={nameOnClick} location={"Search By Park"}/>
-                <SearchBar handleSubmit={handleSubmit} query={query} setQuery={setQuery} submit={"Search Roller "}/>
+                <h1 className="search-header">Search Roller Coasters</h1>
+                <SearchButtons name={name} park={park} parkOnClick = {parkOnClick} nameOnClick={nameOnClick} location={"Search By Park"}/>
+                <SearchBar handleSubmit={handleSubmit} query={query} setQuery={setQuery} submit={"Search Roller Coasters"}/>
             </div>
             {error ? <h2 className="error-results">{error}</h2> :
                 <>

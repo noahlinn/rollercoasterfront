@@ -1,7 +1,7 @@
 const CreateForm = (props) => {
     return(
         <div className="create-div">
-        <h1>{props.header}</h1>
+        <h1 className="search-header">{props.header}</h1>
         <form className="create-form" onSubmit={props.onSubmit}>
             <div>
                 <label htmlFor="name">Name</label>

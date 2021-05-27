@@ -45,7 +45,7 @@ const Profile = (props) => {
         <div>
             {profileUser ?
                 <>
-                    <h1>{profileUser.name}</h1>
+                    <h1 className="search-header">{profileUser.name}</h1>
                     <p>{profileUser.city}</p>
                     <p>{profileUser.about_me}</p>
                     {props.user.id === profileUser.id && <button>Edit</button>}

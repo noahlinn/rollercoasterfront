@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react'
 import { UserContext } from './context/usercontext'
 import { Route, Redirect } from 'react-router-dom'
 import axios from 'axios'
-
+import "@fontsource/anonymous-pro"
 import './App.css';
 
 import Nav from './components/Nav'

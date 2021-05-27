@@ -60,7 +60,7 @@ const OneCoaster = () => {
         <>
             <div className="coaster-page">
                 {coaster && <>
-                    <h1>{coaster.name}</h1>
+                    <h1 className="search-header">{coaster.name}</h1>
                     <div className="one-wrap">
                         <div className="coaster-image">
                             <img src={coaster.image} />

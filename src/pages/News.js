@@ -12,7 +12,7 @@ const News = () => {
     useEffect(getNews, [])
     return (
         <div>
-            <h1>Amusement Park News</h1>
+            <h1 className="search-header">Amusement Park News</h1>
             <div className="news-container">
                 {news && news.map((newIsAWordYouCantUseInJavaScript, i) => (
                     <Link to={{ pathname: newIsAWordYouCantUseInJavaScript.url }} target="_blank">
