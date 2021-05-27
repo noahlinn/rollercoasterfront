@@ -22,7 +22,7 @@ const Login = (props) => {
             <h2 className="search-header">Log into your accout!</h2>
 
             { error &&
-                <div className="error">{error}</div>}
+                <p className="error">{error}</p>}
 
             <form className="create-form" onSubmit={handleSubmit}>
 

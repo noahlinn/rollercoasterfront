@@ -42,18 +42,34 @@ const Profile = (props) => {
 
     useEffect(getBucketList, [])
     return (
-        <div>
-            {profileUser ?
-                <>
-                    <h1 className="search-header">{profileUser.name}</h1>
-                    <img className ="p-pic" src={profileUser.image}/>
-                    <p>{profileUser.city}</p>
-                    <p>{profileUser.about_me}</p>
-                    {props.user.id === profileUser.id && <button>Edit</button>}
-                </>
-                : null}
-            <UserCredits header={"Credits"} coaster={credits} />
-            <UserCredits header={"Bucket List"} coaster={bucketList} />
+        <div className="page-container">
+            <div className="profile-page">
+                {profileUser ?
+                    <>
+                        <h1 className="search-header">{profileUser.name}</h1>
+                        <div className="img-info-creds">
+
+                            <div className="user-info">
+                                <img className="p-pic" src={profileUser.image} />
+                                <p>{profileUser.city}</p>
+                                <p>{profileUser.about_me}</p>
+
+                            </div>
+
+                            <div className="credits">
+                                <UserCredits header={"Credits"} coaster={credits} />
+                            </div>
+                            <div className="bucket">
+                                <UserCredits header={"Bucket List"} coaster={bucketList} />
+                            </div>
+                        </div>
+
+
+                        {/* {props.user.id === profileUser.id && <button>Edit</button>} */}
+                    </>
+                    : null}
+
+            </div>
         </div>
     )
 

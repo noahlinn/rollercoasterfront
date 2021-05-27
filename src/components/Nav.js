@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useContext, useStatem, useEffect } from 'react'
+import { useContext } from 'react'
 import { UserContext } from '../context/usercontext'
 
 const Nav = (props) => {

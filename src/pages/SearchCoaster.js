@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import SearchBar from '../components/SearchBar'
 import SearchResults from '../components/SearchResults'
 import SearchButtons from '../components/SearchButtons'
-import '../css/search.css'
+
 const SearchCoaster = () => {
     const [query, setQuery] = useState("")
     const [name, setName] = useState(false)

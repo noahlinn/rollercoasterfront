@@ -21,7 +21,7 @@ nav p {
 }
 
 nav a {
-  font-size: 150%;
+  font-size: 20px;
   text-decoration: none
 }
 
@@ -80,7 +80,7 @@ nav a {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  color: white;
+  color: rgb(255, 243, 225);
 }
 
 .news-img {
@@ -144,7 +144,7 @@ nav a {
 
 .error-results {
   font-style: italic;
-  color: rgb(44, 205, 182)
+  color: rgb(255, 94, 94)
 }
 
 .video_container {
@@ -262,6 +262,7 @@ iframe {
   margin-right: auto;
   padding: 25px;
   margin: 40px auto;
+  color: rgb(55, 52, 48);
 }
 
 .submit-button{
@@ -276,4 +277,51 @@ iframe {
 .submit-button:hover {
   background-color: rgb(44, 205, 182);
   cursor: pointer;
+}
+
+.error{
+  font-style: italic;
+  color: rgb(255, 94, 94)
+
+}
+
+.home-p{
+  text-align: center;
+  font-weight: bold;
+  width: 650px;
+  margin: auto
+}
+
+.img-info-creds{
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-info{
+  width: 300px;
+  height: 500px;
+  padding: 10px;
+  margin: .75em 0
+}
+
+.credits{
+  width: 300px;
+  height: 500px;
+  overflow: auto;
+  padding: 10px;
+}
+
+
+.bucket{
+  width: 300px;
+  height: 500px;
+  overflow: auto;
+  padding: 10px;
+}
+.cred-head{
+  text-align: center;
+}
+
+.stuff{
+  text-align: left;
 }

@@ -11,7 +11,8 @@ const OneCoaster = () => {
     const [coaster, setCoaster] = useState(null)
     const [creditsId, setCreditsId] = useState([null])
     const [bucketListId, setBucketListId] = useState([null])
-
+    const [creditsError, setCreditsError] = useState(false)
+    const [bucketError, setBucketError] = useState(false)
 
     const getOneCoaster = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/coasters/${params.id}`).then(
@@ -29,9 +30,11 @@ const OneCoaster = () => {
                         creditIdArr.push(cred.id)
                     }
                     setCreditsId(creditIdArr)
+                    setCreditsError(false)
                 }
             )
             .catch((err) => {
+                setCreditsError(true)
                 console.log(err)
             })
     }
@@ -46,8 +49,10 @@ const OneCoaster = () => {
                     bucketIdArr.push(buck.id)
                 }
                 setBucketListId(bucketIdArr)
+                setBucketError(false)
             })
             .catch((err) => {
+                setBucketError(true)
                 console.log(err)
             })
     }
@@ -76,7 +81,7 @@ const OneCoaster = () => {
                             <h4>Manufacturer: {coaster.manufacturer}</h4>
                             <h4>Type: {coaster.type_of}</h4>
                             <div>
-                                <CoasterButtons getBucketList={getBucketList} getCredits={getCredits} creditsId={creditsId} bucketListId={bucketListId} user={user} coaster={coaster} />
+                                <CoasterButtons bucketError={bucketError} creditsError={creditsError} getBucketList={getBucketList} getCredits={getCredits} creditsId={creditsId} bucketListId={bucketListId} user={user} coaster={coaster} />
                             </div>
                         </div>
                     </div>

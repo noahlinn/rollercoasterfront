@@ -1,15 +1,13 @@
 import axios from 'axios'
 import { useState } from 'react'
 
-import { Redirect } from 'react-router-dom'
-
 const SignUpPage = (props) => {
 
     const [input, setInput] = useState({})
 
     const [error, setError] = useState('')
 
-    
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -26,7 +24,7 @@ const SignUpPage = (props) => {
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/users`, data, {
             headers: {
                 'content-type': 'multipart/form-data'
-              }
+            }
         }
         )
             .then((response) => {
@@ -35,37 +33,38 @@ const SignUpPage = (props) => {
             })
             .catch((err) => {
                 setError(err.response.data.message)
-                
+
             })
     }
+    
 
     return (
-        <div className="login-div">
+        <div className="page-container">
             <h1>Sign Up</h1>
             { error &&
                 <div className="error">{error}</div>}
-            <form className="login-form" onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="name">Name</label>
-                    <input className="login-form-input" value={input.name} onChange={(e) => setInput({ ...input, name: e.target.value })} required/>
-                </div>
+            <form className="create-form" onSubmit={handleSubmit}>
+
+                <label htmlFor="name">Name</label>
+                <input className="create-form-input" value={input.name} onChange={(e) => setInput({ ...input, name: e.target.value })} />
+
                 <label htmlFor="email">Email</label>
-                <input className="login-form-input" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} required/>
-                <div>
-                    <label htmlFor="location">Location</label>
-                    <input className="login-form-input" value={input.location} onChange={(e) => setInput({ ...input, location: e.target.value })} required/>
-                </div>
+                <input className="create-form-input" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} />
+
+                <label htmlFor="location">Location</label>
+                <input className="create-form-input" value={input.location} onChange={(e) => setInput({ ...input, location: e.target.value })} />
+
                 <label htmlFor="about_me">About You</label>
-                <textarea className="login-form-input" value={input.about_me} onChange={(e) => setInput({ ...input, about_me: e.target.value })} required/>
-                <div>
-                    <label htmlFor="profile_picture">Profile Picture</label>
-                    <input className="login-form-input" type="file" onChange={(e) => setInput({ ...input, prof_pic: e.target.files[0] })} required/>
-                </div>
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input className="login-form-input" type="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} required/>
-                </div>
-                <input className="submit-login" type="submit" value="Sign Up" />
+                <textarea className="create-form-input" value={input.about_me} onChange={(e) => setInput({ ...input, about_me: e.target.value })} />
+
+                <label htmlFor="profile_picture">Profile Picture</label>
+                <input className="create-form-input" type="file" onChange={(e) => setInput({ ...input, prof_pic: e.target.files[0] })} />
+
+
+                <label htmlFor="password">Password</label>
+                <input className="create-form-input" type="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} />
+
+                <input className="submit-button" type="submit" value="Sign Up" />
 
             </form >
         </div >

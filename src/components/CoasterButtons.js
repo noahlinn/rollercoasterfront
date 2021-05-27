@@ -27,7 +27,7 @@ const CoasterButtons = (props) => {
                 Authorization: userId
             }
         }).then((res) => {
-            props.getCredits()
+            props.getBucketList()
         }).catch((err) => {
             console.log(err)
         })
@@ -76,14 +76,15 @@ const CoasterButtons = (props) => {
             { redirect && <Redirect to={`/searchrollercoasters`} exact />}
             {props.user.id &&
                 <>
-                    {props.creditsId && props.creditsId.includes(parseInt(params.id))
-                        ? <button onClick={removeFromCredits}>Remove from Credits</button>
-                        : <button onClick={addToCredits}>Add to Credits</button>}
+                    {!props.creditsId.includes(parseInt(params.id)) || props.creditsError
+                        ? <button onClick={addToCredits}>Add to Credits</button>
+                        : <button onClick={removeFromCredits}>Remove from Credits</button>}
 
-                    {props.bucketListId.includes(parseInt(params.id))
-                        ? <button onClick={removeFromBucketList}>Remove from Bucket List</button>
-                        : <button onClick={addToBucketList}>Add to Bucket List</button>}
+                    {!props.bucketListId.includes(parseInt(params.id)) || props.bucketError 
+                        ?  <button onClick={addToBucketList}>Add to Bucket List</button>
+                        : <button onClick={removeFromBucketList}>Remove from Bucket List</button>}
 
+                    
                     {props.user.id === props.coaster.user_id &&
                         <>
                             <button onClick={goToEditPage}>Edit Coaster Info</button>

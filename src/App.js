@@ -15,23 +15,12 @@ import EditCoaster from './pages/EditCoaster'
 import Profile from './pages/Profile'
 import News from './pages/News'
 import SearchUsers from './pages/SearchUsers';
+import Home from './pages/Home'
+
 function App() {
   const { userState, fetchUser } = useContext(UserContext)
   const [user, setUser] = userState
   useEffect(fetchUser, [])
-  // const fetchUser = () => {
-  //   if (localStorage.getItem('userId')) {
-  //     axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/verify`, {
-  //       headers: {
-  //         Authorization: localStorage.getItem('userId')
-  //       }
-  //     }).then((response) => {
-  //       setUser(response.data.user)
-  //     })
-  //   }
-  //   console.log('verify')
-  // }
-  // useEffect(fetchUser, [])
 
   return (
     <div className="App">
@@ -42,6 +31,7 @@ function App() {
       <Route exact path='/rollercoasters/:id/edit' render={() => <EditCoaster />} />
       <Route exact path='/news' render={() => <News />} />
       <Route exact path='/searchusers' render={() => <SearchUsers/>}/>
+      <Route exact path='/' render={() => <Home user={user}/>}/>
       {/* <Route exact path='/profile/:id' render={() => <Profile />} /> */}
       {/* <Route path = '/upload' render = {() => <CreateCoaster/>}/> */}
 
@@ -63,7 +53,7 @@ function App() {
 
       <Route path="/login" render={(routeInfo) => {
         if (user.id) {
-          return <Redirect to="/dashboard" />
+          return <Redirect to="/" />
         } else {
           return <Login setUser={setUser} />
         }
@@ -71,7 +61,7 @@ function App() {
 
       <Route path="/signup" render={(routeInfo) => {
         if (user.id) {
-          return <Redirect to="/dashboard" />
+          return <Redirect to="/" />
         } else {
           return <SignUpPage setUser={setUser} />
         }
