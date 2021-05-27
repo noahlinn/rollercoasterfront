@@ -16,7 +16,7 @@ const UserCredits = (props) => {
                 props.coaster.map((creds) => (
                     <Link to={`/rollercoasters/${creds.id}`}>
                         <ul key={creds.id}>
-                            <li>{creds.name}</li>
+                            <li className="list">{creds.name}</li>
                         </ul>
                     </Link>
                 ))

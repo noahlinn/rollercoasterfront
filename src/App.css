@@ -343,3 +343,7 @@ iframe {
   cursor: pointer;
 }
 
+.cred-list a{
+  color: rgb(55, 52, 48);
+}
+
