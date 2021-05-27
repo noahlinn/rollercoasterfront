@@ -16,6 +16,7 @@ import Profile from './pages/Profile'
 import News from './pages/News'
 import SearchUsers from './pages/SearchUsers';
 import Home from './pages/Home'
+import UserSubmit from './pages/UserSubmit'
 
 function App() {
   const { userState, fetchUser } = useContext(UserContext)
@@ -30,8 +31,8 @@ function App() {
       <Route exact path='/rollercoasters/:id' render={() => <OneCoaster />} />
       <Route exact path='/rollercoasters/:id/edit' render={() => <EditCoaster />} />
       <Route exact path='/news' render={() => <News />} />
-      <Route exact path='/searchusers' render={() => <SearchUsers/>}/>
-      <Route exact path='/' render={() => <Home user={user}/>}/>
+      <Route exact path='/searchusers' render={() => <SearchUsers />} />
+      <Route exact path='/' render={() => <Home user={user} />} />
 
       <Route path="/upload" render={(routeInfo) => {
         if (user.id) {
@@ -41,9 +42,17 @@ function App() {
         }
       }} />
 
-      <Route path="/profile/:id" render={(routeInfo) => {
+      <Route path="/profile/:id" exact render={(routeInfo) => {
         if (user.id) {
-          return <Profile user={user}/>
+          return <Profile user={user} />
+        } else {
+          return <Redirect to="/searchrollercoasters" />
+        }
+      }} />
+
+      <Route path="/profile/:id/submissions" render={(routeInfo) => {
+        if (user.id) {
+          return <UserSubmit/>
         } else {
           return <Redirect to="/searchrollercoasters" />
         }

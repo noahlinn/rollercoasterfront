@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -53,6 +53,7 @@ const Profile = (props) => {
                                 <img className="p-pic" src={profileUser.image} />
                                 <p>{profileUser.city}</p>
                                 <p>{profileUser.about_me}</p>
+                                <Link to= {`/profile/${params.id}/submissions`}><button className="prof-button">Submitted Roller Coasters</button></Link>
 
                             </div>
 
