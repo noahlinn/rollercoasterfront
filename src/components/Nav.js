@@ -9,7 +9,7 @@ const Nav = (props) => {
 
     return (
         <div className="nav-container">
-            <img src="https://res.cloudinary.com/drrh2ss0o/image/upload/v1622077217/twitter_header_photo_1_ta0ftv.png" />
+            <img src="https://res.cloudinary.com/drrh2ss0o/image/upload/v1622126461/twitter_header_photo_1_d4f7ls.png" />
             <nav>
 
                 <Link to='/' ><p>Home</p></Link>

@@ -51,7 +51,7 @@ const SearchUsers = () => {
     }
 
     return (
-        <>
+        <div className= "page-container">
             <h1 className="search-header">Search Users</h1>
             <SearchButtons name={name} park={location}nameOnClick={nameOnClick} parkOnClick={locationOnClick} location={"Search By Location"} />
             <SearchBar handleSubmit={handleSubmit} query={query} setQuery={setQuery} submit={"Search Users"} />
@@ -64,7 +64,7 @@ const SearchUsers = () => {
                         </div>}
                 </>
             }
-        </>
+        </div>
     )
 }
 

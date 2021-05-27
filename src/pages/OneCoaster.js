@@ -57,7 +57,7 @@ const OneCoaster = () => {
 
     useEffect(getOneCoaster, [])
     return (
-        <>
+        <div className= "page-container">
             <div className="coaster-page">
                 {coaster && <>
                     <h1 className="search-header">{coaster.name}</h1>
@@ -97,7 +97,7 @@ const OneCoaster = () => {
 
                 </>}
             </div>
-        </>
+        </div>
     )
 }
 export default OneCoaster

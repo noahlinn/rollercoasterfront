@@ -43,10 +43,10 @@ const CreateCoaster = (props) => {
     }
 
     return (
-        <>
+        <div className="page-container">
             { redirect && <Redirect to={`/rollercoasters/${newCoaster.id}`} exact />}
             <CreateForm header={"Add Roller Coaster"} photo={true}onSubmit={onSubmit} input={input} setInput={setInput} submit={"Add Coaster!"}/>
-        </>
+        </div>
     )
 }
 export default CreateCoaster

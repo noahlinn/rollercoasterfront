@@ -4,12 +4,12 @@
 }
 
 body {
-  background-color: rgb(232, 170, 140);
+  background-color: rgb(255, 243, 225);
 }
 
 nav {
   margin-top: 25px;
-  background-color: rgb(94, 97, 106, 255);
+  background-color: rgb(44, 205, 182);
   display: flex;
   justify-content: space-evenly;
   width: 90%;
@@ -17,7 +17,7 @@ nav {
 }
 
 nav p {
-  color: rgb(232, 170, 140);
+  color: rgb(55, 52, 48);
 }
 
 nav a {
@@ -39,7 +39,7 @@ nav a {
 }
 
 .search-header {
-  color: rgb(79, 82, 91);
+  color: rgb(55, 52, 48);
   font-weight: bolder;
   font-size: 50px;
 }
@@ -65,7 +65,7 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(94, 97, 106, 0.75);
+  background-color: rgba(55, 52, 48, 0.619);
   height: 110px;
   width: 298px;
   margin-top: 95px;
@@ -108,12 +108,12 @@ nav a {
 }
 
 .submit-search:hover {
-  background-color: rgb(232, 170, 140);
+  background-color: rgb(44, 205, 182);
   cursor: pointer;
 }
 
 .search-buttons button:hover {
-  background-color: rgb(232, 170, 140);
+  background-color: rgb(44, 205, 182);
   cursor: pointer;
 }
 
@@ -136,7 +136,7 @@ nav a {
   height: 25px;
   font-size: 30px;
   background-color: rgba(94, 97, 106, 0.75);
-  color: rgb(232, 170, 140);
+  color: rgb(255, 243, 225);
   outline: none;
   text-align: center;
   margin: 10px;
@@ -144,7 +144,7 @@ nav a {
 
 .error-results {
   font-style: italic;
-  color: rgba(94, 97, 106, 0.75)
+  color: rgb(44, 205, 182)
 }
 
 .video_container {
@@ -188,12 +188,12 @@ iframe {
 .coaster_info {
   width: 40%;
   justify-content: center;
-  color: rgb(79, 82, 91);
+  color: rgb(55, 52, 48);
   font-weight: bolder;
 }
 
 .pov-head {
-  color: rgb(79, 82, 91);
+  color: rgb(55, 52, 48);
   font-size: 35px
 }
 
@@ -214,7 +214,7 @@ iframe {
   margin: 10px;
   border-radius: 20px;
   border: -10px;
-  border-color: rgba(94, 97, 106, 0.75);
+  border-color: rgb(55, 52, 48);
 }
 
 .coaster-buttons {
@@ -225,7 +225,7 @@ iframe {
 }
 
 .coaster-buttons button:hover {
-  background-color: rgb(232, 170, 140);
+  background-color: rgb(44, 205, 182);
   cursor: pointer;
 }
 
@@ -239,7 +239,7 @@ iframe {
 .create-form label {
   font-size: 20px;
   margin: 5px;
-  color: rgba(94, 97, 106, 0.75);
+  color: rgb(55, 52, 48);
   font-weight: bold;
 }
 
@@ -253,4 +253,27 @@ iframe {
 .upload{
   width: 300px;
   color: rgba(94, 97, 106, 0.75);
+}
+
+.page-container{
+  width: 85%;
+  background-color: rgba(55, 52, 48, 0.153);
+  margin-left:auto ;
+  margin-right: auto;
+  padding: 25px;
+  margin: 40px auto;
+}
+
+.submit-button{
+  width: 150px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 20px;
+  border: -10px;
+  border-color: rgba(94, 97, 106, 0.75);
+}
+
+.submit-button:hover {
+  background-color: rgb(44, 205, 182);
+  cursor: pointer;
 }

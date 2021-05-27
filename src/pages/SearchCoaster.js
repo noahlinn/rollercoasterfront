@@ -55,7 +55,7 @@ const SearchCoaster = () => {
     }
 
     return (
-        <>
+        <div className= "page-container ">
             <div>
                 <h1 className="search-header">Search Roller Coasters</h1>
                 <SearchButtons name={name} park={park} parkOnClick = {parkOnClick} nameOnClick={nameOnClick} location={"Search By Park"}/>
@@ -69,7 +69,7 @@ const SearchCoaster = () => {
                         </div>}
                 </>
             }
-        </>
+        </div>
     )
 }
 

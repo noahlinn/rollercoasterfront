@@ -11,7 +11,7 @@ const News = () => {
     }
     useEffect(getNews, [])
     return (
-        <div>
+        <div className= "page-container">
             <h1 className="search-header">Amusement Park News</h1>
             <div className="news-container">
                 {news && news.map((newIsAWordYouCantUseInJavaScript, i) => (

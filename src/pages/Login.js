@@ -18,24 +18,22 @@ const Login = (props) => {
             })
     }
     return (
-        <div>
+        <div className="page-container">
             <h2 className="search-header">Log into your accout!</h2>
 
             { error &&
                 <div className="error">{error}</div>}
 
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="signup-email">Email:</label>
-                    <input id="signup-email" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} />
-                </div>
-                <div>
-                    <label htmlFor="signup-password">Password:</label>
-                    <input id="signup-password" type="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} />
-                </div>
-                <div>
-                    <input type="submit" value="Log in!" ></input>
-                </div>
+            <form className="create-form" onSubmit={handleSubmit}>
+
+                <label htmlFor="signup-email">Email:</label>
+                <input className="create-form-input" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} />
+
+                <label htmlFor="signup-password">Password:</label>
+                <input className="create-form-input" type="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} />
+
+                <input className="submit-button"type="submit" value="Log in!" ></input>
+
             </form>
         </div>
     )
