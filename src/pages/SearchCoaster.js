@@ -36,6 +36,7 @@ const SearchCoaster = () => {
 
     const searchByName = () => {
         setError(null)
+        setResults(false)
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/coasters/search`, {
             "query": query.query
         }).then((res) => setResults(res.data.results))
@@ -46,6 +47,7 @@ const SearchCoaster = () => {
 
     const searchByPark = () => {
         setError(null)
+        setResults(false)
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/coasters/search/park`, {
             "query": query.query
         }).then((res) => setResults(res.data.results))
