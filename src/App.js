@@ -32,8 +32,6 @@ function App() {
       <Route exact path='/news' render={() => <News />} />
       <Route exact path='/searchusers' render={() => <SearchUsers/>}/>
       <Route exact path='/' render={() => <Home user={user}/>}/>
-      {/* <Route exact path='/profile/:id' render={() => <Profile />} /> */}
-      {/* <Route path = '/upload' render = {() => <CreateCoaster/>}/> */}
 
       <Route path="/upload" render={(routeInfo) => {
         if (user.id) {
