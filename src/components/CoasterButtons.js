@@ -1,11 +1,13 @@
 
 import { Link, useParams, Redirect, useHistory } from 'react-router-dom'
+import {useState} from 'react'
 import axios from 'axios'
 
 const CoasterButtons = (props) => {
     const history = useHistory();
     const params = useParams()
     const userId = localStorage.getItem('userId')
+    const [redirect, setRedirect] = useState(false)
 
     const addToCredits = () => {
         axios.put(`${process.env.REACT_APP_BACKEND_URL}/users/credits/${params.id}`, {}, {
@@ -61,9 +63,17 @@ const CoasterButtons = (props) => {
         })
     }
 
+    const deletos = () => {
+        axios.delete(`${process.env.REACT_APP_BACKEND_URL}/coasters/${params.id}`)
+        .then(
+            setRedirect(true)
+        )
+        .catch((err) => console.log(err))
+    }
 
     return (
-        <span>
+        <div className="coaster-buttons">
+            { redirect && <Redirect to={`/searchrollercoasters`} exact />}
             {props.user.id &&
                 <>
                     {props.creditsId && props.creditsId.includes(parseInt(params.id))
@@ -75,9 +85,12 @@ const CoasterButtons = (props) => {
                         : <button onClick={addToBucketList}>Add to Bucket List</button>}
 
                     {props.user.id === props.coaster.user_id &&
-                        <button onClick={goToEditPage}>Edit Coaster Info</button>}
+                        <>
+                            <button onClick={goToEditPage}>Edit Coaster Info</button>
+                            <button onClick={deletos}>Delete Roller Coaster</button>
+                        </>}
                 </>}
-        </span>
+        </div>
     )
 }
 

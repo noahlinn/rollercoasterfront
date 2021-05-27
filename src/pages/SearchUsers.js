@@ -53,7 +53,7 @@ const SearchUsers = () => {
     return (
         <>
             <h1 className="search-header">Search Users</h1>
-            <SearchButtons nameOnClick={nameOnClick} parkOnClick={locationOnClick} location={"Search By Location"} />
+            <SearchButtons name={name} park={location}nameOnClick={nameOnClick} parkOnClick={locationOnClick} location={"Search By Location"} />
             <SearchBar handleSubmit={handleSubmit} query={query} setQuery={setQuery} submit={"Search Users"} />
 
             {error ? <h2 className="error-results">{error}</h2> :

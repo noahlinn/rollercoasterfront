@@ -42,7 +42,7 @@ const OneCoaster = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/bucketlist/${user.id}`).then(
             (res) => {
                 let bucketIdArr = []
-                for(let buck of res.data.bucket_list){
+                for (let buck of res.data.bucket_list) {
                     bucketIdArr.push(buck.id)
                 }
                 setBucketListId(bucketIdArr)
@@ -61,23 +61,29 @@ const OneCoaster = () => {
             <div className="coaster-page">
                 {coaster && <>
                     <h1 className="search-header">{coaster.name}</h1>
-                    <div className="one-wrap">
+                    <div className="photo-info">
                         <div className="coaster-image">
                             <img src={coaster.image} />
                         </div>
 
                         <div className="coaster_info">
-                            <h3>{coaster.park_located_at}</h3>
-                            <h4>{coaster.location}</h4>
-                            <p>Height: {coaster.height_in_feet}ft</p>
-                            <p>Max Speed: {coaster.top_speed_in_mph}mph</p>
-                            <p>Length: {coaster.length_in_feet}ft</p>
-                            <p>Inversions: {coaster.number_of_inversions}</p>
-                            <p>Manufacturer: {coaster.manufacturer}</p>
-                            <p>Type: {coaster.type_of}</p>
-
+                            <h2>Park: {coaster.park_located_at}</h2>
+                            <h3>City: {coaster.location}</h3>
+                            <h4>Height: {coaster.height_in_feet}ft</h4>
+                            <h4>Max Speed: {coaster.top_speed_in_mph}mph</h4>
+                            <h4>Length: {coaster.length_in_feet}ft</h4>
+                            <h4>Inversions: {coaster.number_of_inversions}</h4>
+                            <h4>Manufacturer: {coaster.manufacturer}</h4>
+                            <h4>Type: {coaster.type_of}</h4>
+                            <div>
+                                <CoasterButtons getBucketList={getBucketList} getCredits={getCredits} creditsId={creditsId} bucketListId={bucketListId} user={user} coaster={coaster} />
+                            </div>
                         </div>
-                        {/* <div className="container-container">
+                    </div>
+                    <div className="fix-vid">
+                        <h2 className="pov-head">Point Of View Video</h2>
+                        <div className="container-container">
+
                             <div className="video_container">
                                 <iframe src={`https://www.youtube.com/embed/${coaster.video}`}
                                     frameborder='0'
@@ -86,9 +92,9 @@ const OneCoaster = () => {
                                     title='video'
                                 />
                             </div>
-                        </div> */}
+                        </div>
                     </div>
-                    <CoasterButtons getBucketList={getBucketList} getCredits={getCredits} creditsId={creditsId} bucketListId={bucketListId} user={user} coaster={coaster} />
+
                 </>}
             </div>
         </>

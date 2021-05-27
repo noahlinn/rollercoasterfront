@@ -46,6 +46,7 @@ const Profile = (props) => {
             {profileUser ?
                 <>
                     <h1 className="search-header">{profileUser.name}</h1>
+                    <img className ="p-pic" src={profileUser.image}/>
                     <p>{profileUser.city}</p>
                     <p>{profileUser.about_me}</p>
                     {props.user.id === profileUser.id && <button>Edit</button>}
