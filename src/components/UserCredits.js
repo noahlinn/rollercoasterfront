@@ -10,7 +10,7 @@ const UserCredits = (props) => {
                 props.coaster.length !== 0 
                 ? <h4>Total: {props.coaster.length}</h4>
                 : <h4>None</h4>}
-                <div className="stuff">
+                <div className="cred-list">
             {props.coaster &&
                 
                 props.coaster.map((creds) => (
